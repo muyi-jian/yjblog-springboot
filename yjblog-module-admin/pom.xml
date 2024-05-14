@@ -2,42 +2,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!-- 指定父项目为 weblog-springboot -->
     <parent>
         <groupId>com.yjblog</groupId>
         <artifactId>yjblog-springboot</artifactId>
         <version>${revision}</version>
     </parent>
     <groupId>com.yjblog</groupId>
-    <artifactId>yjblog-web</artifactId>
+    <artifactId>yjblog-module-admin</artifactId>
     <version>${revision}</version>
-    <name>yjblog-web</name>
-    <description>yjblog-web(入口项目，负责博客前台展示相关功能，打包也放在这个模块负责)</description>
+    <name>yjblog-module-admin</name>
+    <description>yjblog-module-admin(负责管理后台相关功能)</description>
+
 
     <dependencies>
-        <!-- Web 依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.yjblog</groupId>
             <artifactId>yjblog-module-common</artifactId>
             <version>${revision}</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.yjblog</groupId>
-            <artifactId>yjblog-module-admin</artifactId>
-            <version>${revision}</version>
-        </dependency>
-
         <!-- 免写冗余的 Java 样板式代码 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
         <!-- 单元测试 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -45,15 +34,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

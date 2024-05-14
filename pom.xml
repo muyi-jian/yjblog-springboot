@@ -21,6 +21,10 @@
     <modules>
         <!-- 入口模块 -->
         <module>yjblog-web</module>
+        <!-- 管理后台 -->
+        <module>yjblog-module-admin</module>
+        <!-- 通用模块 -->
+        <module>yjblog-module-common</module>
     </modules>
     <properties>
         <!-- 项目版本号 -->
@@ -31,11 +35,40 @@
         <!-- Maven 相关 -->
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <!-- 依赖包版本 -->
+        <lombok.version>1.18.28</lombok.version>
+        <guava.version>31.1-jre</guava.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
     </properties>
 
     <!-- 统一依赖管理 -->
     <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.quanxiaoha</groupId>
+                <artifactId>weblog-module-admin</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>com.quanxiaoha</groupId>
+                <artifactId>weblog-module-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- 常用工具库 -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <build>
