@@ -1,0 +1,8 @@
+app:
+    name: yjblog
+server:
+    port: 8080
+spring:
+    profiles:
+        # 默认激活 dev 环境
+        active: dev

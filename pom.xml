@@ -25,6 +25,7 @@
         <module>yjblog-module-admin</module>
         <!-- 通用模块 -->
         <module>yjblog-module-common</module>
+
     </modules>
     <properties>
         <!-- 项目版本号 -->
@@ -39,6 +40,8 @@
         <lombok.version>1.18.28</lombok.version>
         <guava.version>31.1-jre</guava.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
+        <jackson.version>2.15.2</jackson.version>
+
     </properties>
 
     <!-- 统一依赖管理 -->
@@ -67,6 +70,12 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
+            </dependency>
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
