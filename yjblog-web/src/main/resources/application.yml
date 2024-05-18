@@ -6,9 +6,9 @@ spring:
     profiles:
         # 默认激活 dev 环境
         active: dev
-
-    jackson:
-        # 设置后台返参，若字段值为 null, 则不返回
-        default-property-inclusion: non_null
-        # 设置日期字段格式
-        date-format: yyyy-MM-dd HH:mm:ss
+# 添加了配置了，不再使用以下配置
+#    jackson:
+#        # 设置后台返参，若字段值为 null, 则不返回
+#        default-property-inclusion: non_null
+#        # 设置日期字段格式
+#        date-format: yyyy-MM-dd HH:mm:ss
