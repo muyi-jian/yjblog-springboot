@@ -46,7 +46,6 @@ public class TestController {
         // 返参
         // return Response.success();
         // 主动定义一个运行时异常，分母不能为零
-
         return Response.success(user);
     }
 
