@@ -8,3 +8,7 @@ CREATE TABLE `t_user` (
                           PRIMARY KEY (`id`) USING BTREE,
                           UNIQUE KEY `uk_username` (`username`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+
+-- 初始化用户  密码：123456
+INSERT INTO `t_user` (`username`, `password`, `create_time`, `update_time`, `is_deleted`)
+VALUES ('yjblog', '$2a$10$WffkwjMh3lWI9fGRJgZIJ.TMnKZMTLlDRB/30s/Akz1E.tW.NUT9m', now(), now(), 0);
