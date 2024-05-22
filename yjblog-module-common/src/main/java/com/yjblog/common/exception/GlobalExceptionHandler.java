@@ -8,6 +8,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.security.access.AccessDeniedException;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
@@ -20,6 +21,12 @@ import java.util.Optional;
 @ControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
+    @ExceptionHandler({ AccessDeniedException.class })
+    public void throwAccessDeniedException(AccessDeniedException e) throws AccessDeniedException {
+        // 捕获到鉴权失败异常，主动抛出，交给 RestAccessDeniedHandler 去处理
+        log.info("============= 捕获到 AccessDeniedException");
+        throw e;
+    }
 
     /**
      * 捕获自定义业务异常
@@ -79,5 +86,6 @@ public class GlobalExceptionHandler {
 
         return Response.fail(errorCode, errorMessage);
     }
+
 }
 

@@ -12,3 +12,16 @@ CREATE TABLE `t_user` (
 -- 初始化用户  密码：123456
 INSERT INTO `t_user` (`username`, `password`, `create_time`, `update_time`, `is_deleted`)
 VALUES ('yjblog', '$2a$10$WffkwjMh3lWI9fGRJgZIJ.TMnKZMTLlDRB/30s/Akz1E.tW.NUT9m', now(), now(), 0);
+
+
+CREATE TABLE `t_user_role` (
+                               `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+                               `username` varchar(60) NOT NULL COMMENT '用户名',
+                               `role` varchar(60) NOT NULL COMMENT '角色',
+                               `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                               PRIMARY KEY (`id`) USING BTREE,
+                               KEY `idx_username` (`username`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='用户角色表';
+
+INSERT INTO `t_user_role` (`id`, `username`, `role`, `create_time`) VALUES (1, 'admin', 'ROLE_ADMIN', '2023-07-07 01:21:15');
+INSERT INTO `t_user_role` (`id`, `username`, `role`, `create_time`) VALUES (2, 'test', 'ROLE_VISITOR', '2023-07-07 01:23:33');
