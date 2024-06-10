@@ -19,3 +19,12 @@ spring:
         user:
             name: admin # 登录用户名
             password: 123456 # 登录密码
+
+#=================================================================
+# minio
+#=================================================================
+minio:
+    endpoint: http://192.168.56.11:9000
+    accessKey: yjblog
+    secretKey: yj123456
+    bucketName: yjblog

@@ -10,10 +10,9 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
- * @date: 2023-08-22 17:06
- * @description: TODO
+ * @author 木白
+ * @date 2024/6/5
+ * @description TODO
  **/
 public interface TagMapper extends BaseMapper<TagDO> {
 

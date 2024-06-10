@@ -9,10 +9,9 @@ import com.yjblog.common.utils.PageResponse;
 import com.yjblog.common.utils.Response;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
- * @date: 2023-09-15 14:03
- * @description: TODO
+ * @author 木白
+ * @date 2024/6/5
+ * @description TODO
  **/
 public interface AdminTagService {
 

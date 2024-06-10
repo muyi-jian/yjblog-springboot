@@ -8,28 +8,36 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @author 木白
  * @date 2024/6/5
- * @description 标签
- **/
+ * @description
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName("t_tag")
-public class TagDO {
+@TableName("t_blog_settings")
+public class BlogSettingsDO {
 
     @TableId(type = IdType.AUTO)
     private Long id;
 
+    private String logo;
+
     private String name;
 
-    private LocalDateTime createTime;
+    private String author;
 
-    private LocalDateTime updateTime;
+    private String introduction;
 
-    private Boolean isDeleted;
+    private String avatar;
+
+    private String githubHomepage;
+
+    private String csdnHomepage;
+
+    private String giteeHomepage;
+
+    private String zhihuHomepage;
 }
