@@ -1,0 +1,33 @@
+package com.yjblog.web.controller;
+
+import com.yjblog.common.aspect.ApiOperationLog;
+import com.yjblog.common.utils.Response;
+import com.yjblog.web.model.vo.article.FindIndexArticlePageListReqVO;
+import com.yjblog.web.service.ArticleService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author 木白
+ * @date 2024/6/12
+ * @description
+ */
+@RestController
+@Api(tags = "文章")
+public class ArticleController {
+
+    @Autowired
+    private ArticleService articleService;
+
+    @PostMapping("/article/list")
+    @ApiOperation(value = "获取首页文章分页数据")
+    @ApiOperationLog(description = "获取首页文章分页数据")
+    public Response findArticlePageList(@RequestBody FindIndexArticlePageListReqVO findIndexArticlePageListReqVO) {
+        return articleService.findArticlePageList(findIndexArticlePageListReqVO);
+    }
+
+}
