@@ -1,6 +1,7 @@
 package com.yjblog.web.service;
 
 import com.yjblog.common.utils.Response;
+import com.yjblog.web.model.vo.tag.FindTagArticlePageListReqVO;
 
 /**
  * @author 木白
@@ -13,4 +14,11 @@ public interface TagService {
      * @return
      */
     Response findTagList();
+    /**
+     * 获取标签下文章分页列表
+     * @param findTagArticlePageListReqVO
+     * @return
+     */
+    Response findTagPageList(FindTagArticlePageListReqVO findTagArticlePageListReqVO);
+
 }

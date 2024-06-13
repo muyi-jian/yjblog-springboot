@@ -1,6 +1,7 @@
 package com.yjblog.web.service;
 
 import com.yjblog.common.utils.Response;
+import com.yjblog.web.model.vo.category.FindCategoryArticlePageListReqVO;
 
 /**
  * @author 木白
@@ -13,4 +14,10 @@ public interface CategoryService {
      * @return
      */
     Response findCategoryList();
+    /**
+     * 获取分类下文章分页数据
+     * @param findCategoryArticlePageListReqVO
+     * @return
+     */
+    Response findCategoryArticlePageList(FindCategoryArticlePageListReqVO findCategoryArticlePageListReqVO);
 }
