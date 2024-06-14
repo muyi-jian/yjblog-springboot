@@ -2,6 +2,7 @@ package com.yjblog.web.controller;
 
 import com.yjblog.common.aspect.ApiOperationLog;
 import com.yjblog.common.utils.Response;
+import com.yjblog.web.model.vo.article.FindArticleDetailReqVO;
 import com.yjblog.web.model.vo.article.FindIndexArticlePageListReqVO;
 import com.yjblog.web.service.ArticleService;
 import io.swagger.annotations.Api;
@@ -29,5 +30,10 @@ public class ArticleController {
     public Response findArticlePageList(@RequestBody FindIndexArticlePageListReqVO findIndexArticlePageListReqVO) {
         return articleService.findArticlePageList(findIndexArticlePageListReqVO);
     }
-
+    @PostMapping("/article/detail")
+    @ApiOperation(value = "获取文章详情")
+    @ApiOperationLog(description = "获取文章详情")
+    public Response findArticleDetail(@RequestBody FindArticleDetailReqVO findArticleDetailReqVO) {
+        return articleService.findArticleDetail(findArticleDetailReqVO);
+    }
 }
