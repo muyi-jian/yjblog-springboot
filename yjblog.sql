@@ -11,7 +11,7 @@ CREATE TABLE `t_user` (
 
 -- 初始化用户  密码：123456
 INSERT INTO `t_user` (`username`, `password`, `create_time`, `update_time`, `is_deleted`)
-VALUES ('yjblog', '$2a$10$WffkwjMh3lWI9fGRJgZIJ.TMnKZMTLlDRB/30s/Akz1E.tW.NUT9m', now(), now(), 0);
+VALUES ('yjblog', '$2a$10$vUpMEO.k5.8qS.E805KTAOtUkSSxOGagGfQgLDghie.CSSi5I7JwW', now(), now(), 0);
 
 
 CREATE TABLE `t_user_role` (
@@ -105,3 +105,14 @@ CREATE TABLE `t_article_tag_rel` (
                                      KEY `idx_article_id` (`article_id`) USING BTREE,
                                      KEY `idx_tag_id` (`tag_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='文章对应标签关联表';
+
+
+CREATE TABLE `t_statistics_article_pv` (
+                                           `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                           `pv_date` date NOT NULL COMMENT '被统计的日期',
+                                           `pv_count` bigint(20) unsigned NOT NULL COMMENT 'pv访问量',
+                                           `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                           `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后一次更新时间',
+                                           PRIMARY KEY (`id`) USING BTREE,
+                                           UNIQUE KEY `uk_pv_date` (`pv_date`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='统计表 - 文章 PV (访问量)';

@@ -5,7 +5,7 @@ server:
 spring:
     profiles:
         # 默认激活 dev 环境
-        active: dev
+        active: prod
 # 添加了配置了，不再使用以下配置
 #    jackson:
 #        # 设置后台返参，若字段值为 null, 则不返回
