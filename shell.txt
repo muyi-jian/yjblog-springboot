@@ -1,0 +1,4 @@
+运行jar
+
+nohup java -jar  yjblog-web-0.0.1-SNAPSHOT.jar -Xms200m -Xmx200m --spring.profiles.active=prod > /dev/null 2>&1 &
+
